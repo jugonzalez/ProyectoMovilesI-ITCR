@@ -1,0 +1,29 @@
+<h1>Listing taggs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Idarticle</th>
+      <th>Int</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taggs.each do |tagg| %>
+      <tr>
+        <td><%= tagg.name %></td>
+        <td><%= tagg.idarticle %></td>
+        <td><%= tagg.int %></td>
+        <td><%= link_to 'Show', tagg %></td>
+        <td><%= link_to 'Edit', edit_tagg_path(tagg) %></td>
+        <td><%= link_to 'Destroy', tagg, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tagg', new_tagg_path %>

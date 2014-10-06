@@ -1,0 +1,42 @@
+<ion-view title="SmartShopping" hide-back-button=true>
+  <ion-nav-buttons side="left">
+    <!-- ion-navicon-->
+    <button menu-toggle="left" class="button button-icon icon ion-android-user-menu"></button>
+  </ion-nav-buttons>
+
+
+  <ion-content class="has-header">
+    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+  <br>
+    <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Min Price</span>
+      <input type="text" ng-model="search.num1">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Max Price</span>
+      <input type="text" ng-model="search.num2">
+    </label>
+    <button class="button button-block button-positive" ng-click="search()">
+      Search
+    </button>
+  </div>
+
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#">
+        <div class="list">
+        <a class="item item-thumbnail-left" href="#/app/playlists/{{playlist.id}}">
+          <img src="png/android-image.png">
+          <h2>{{playlist.title}}</h2>
+          <p>{{playlist.text}}</p>
+          <p>{{playlist.costo}}</p>
+          <span class="badge badge-positive icon ion-ios7-star ">{{playlist.score}}</span>
+        </a>
+       </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

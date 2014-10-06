@@ -1,0 +1,43 @@
+
+<ion-view title="SmartShopping">
+  <ion-content class="has-header">
+<div class="list card">
+  <div class="item item-body">
+
+    <div class="alert alert-info" role="alert">
+    <img height="200" width="200" src="png/android-image.png">
+    <h1> {{objetoActual.title}} </h1>
+    <p>
+		Descripción: {{objetoActual.text}}
+    </p>
+    <p>
+		Costo: {{objetoActual.costo}}
+    </p>
+    <p>
+		Ubicación: {{objetoActual.direccion}}
+    </p>
+    <p>
+		Contactos: {{objetoActual.email}}
+    </p>
+    <p>
+      <span class="badge badge-positive icon ion-ios7-star">{{objetoActual.score}}</span>
+    </p>
+    <p>
+      Etiquetas:
+    </p>
+
+    <list  ng-repeat="tag in tags">
+      <l style="left" class="button button-small button-positive" ng-click="searchothers(tag.name)"> {{tag.name}} </l>
+    </list>
+
+    <a class="button button-small button-positive button-clear icon ion-thumbsup" ng-click="rate()"></a>
+  </div>
+
+  </div>
+</div>
+
+
+
+
+  </ion-content>
+</ion-view>

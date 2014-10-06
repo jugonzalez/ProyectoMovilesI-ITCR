@@ -1,0 +1,56 @@
+<ion-view title="SmartShopping">
+
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-android-user-menu"></button>
+  </ion-nav-buttons>
+
+  <ion-content class="has-header">
+
+    <center>
+          <img src="png/images.png" style="width:300px;height:300px" id="imagen">
+    </center>
+
+
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Title:</span>
+        <input type="text" ng-model="add.title">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Description:</span>
+        <input type="text" ng-model="add.description">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Price:</span>
+        <input type="text" ng-model="add.price">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Location:</span>
+        <input type="text" ng-model="add.location">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Tags:</span>
+        <input type="text" ng-model="add.tags">
+      </label>
+      <br>
+      <br>
+      <br>
+    </div>
+
+    <div class="tabs tabs-icon-left tabs-background-dark tabs-positive">
+      <a class="tab-item" ng-click="capturePhoto()">
+        <i class="icon icon-left ion-android-camera button-dark"></i>
+      </a>
+      <a class="tab-item" ng-click="getPhoto(pictureSource.PHOTOLIBRARY)">
+        <i class="icon icon-left ion-android-folder button-dark"></i>
+      </a>
+      <a class="tab-item" ng-click="getLocation()">
+        <i class="icon icon-left ion-android-locate button-dark"></i>
+      </a>
+      <a class="tab-item" ng-click="addAd()">
+        <i class="icon icon-left ion-plus-circled button-positive"></i> 
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

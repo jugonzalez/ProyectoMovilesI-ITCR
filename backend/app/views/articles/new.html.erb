@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Smart Shopping</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/articles/" class="navbar-brand">Inicio</a>
+    </div>
+    
+
+
+<nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/articles/new/">Publicar</a>
+        </li>
+        <li>
+          <a href="#">Mis anuncios</a>
+        </li>
+        <li>
+          <a href="#">Ajustes</a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-search"></i></a>
+
+          <ul class="dropdown-menu" style="padding:12px;">
+<%= form_tag(articles_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="icon-search"></i></button>
+		<%= text_field_tag :search, params[:search], class: "form-control pull-left", placeholder: "Buscar archivo" %>
+  <% end %>
+  <%= yield %>
+            </form>
+          </ul>
+        </li>
+      </ul>
+
+    </nav>
+
+	
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Smart Shopping 
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+                <h2>Publicar artículo</h2>   
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+
+
+<!--Formulario-->
+<h2> Formulario de publicación </h2>
+
+<%= form_for @article, :html => { :multipart => true } do |f| %>
+
+  <p>
+    <%= f.label :Titulo%><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :Descripcion%><br>
+    <%= f.text_area :text %>
+  </p>
+
+  <p>
+    <%= f.label :Costo %><br>
+    <%= f.text_field :costo %>
+  </p>
+
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :Locacion%><br>
+    <%= f.text_field :direccion %>
+  </p>
+
+ 
+  <p>
+    <%=  f.label :Seleccionar_foto%>
+    <%= f.file_field :pic %>
+  </p>
+
+
+  <p>
+   
+
+    <%= f.label :tag_list_separados_por_comas%> <br>
+    <%= f.text_field :tag_list %>
+
+
+    
+  </p>
+
+
+
+<button type="submit" class="btn btn-primary pull-right btnNext">Publicar </button>
+
+
+<% end %>
+
+
+</div>
+      </div>
+                                                                                       
+	                                                
+
+                                                
+                                                                                
+<hr>
+
+
+
+
+
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
+

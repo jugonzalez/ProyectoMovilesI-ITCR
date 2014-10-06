@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tagg.name %>
+</p>
+
+<p>
+  <strong>Idarticle:</strong>
+  <%= @tagg.idarticle %>
+</p>
+
+<p>
+  <strong>Int:</strong>
+  <%= @tagg.int %>
+</p>
+
+<%= link_to 'Edit', edit_tagg_path(@tagg) %> |
+<%= link_to 'Back', taggs_path %>

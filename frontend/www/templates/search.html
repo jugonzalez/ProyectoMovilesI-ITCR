@@ -1,0 +1,55 @@
+<ion-view title="SmartShopping" hide-back-button=true>
+  <ion-nav-buttons side="left">
+    <!-- ion-navicon-->
+    <button menu-toggle="left" class="button button-icon icon ion-android-user-menu"></button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+          <button class="button button-clear">
+            <i class="icon ion-power"></i>
+          </button>
+    <!--img class="img" src={{usuario}}-->
+  </ion-nav-buttons>
+
+<div class="list">
+  <br>
+  <br>
+  <br>
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Select by:
+    </div>
+    <select ng-model="option">
+      <option value="Tag">Tag</option>
+      <option value="Title" selected>Title</option>
+    </select>
+  </label>
+</div>
+
+  <div class="list">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="{{option}}" ng-model="articletext">
+      </label>
+      <button class="button button-small" ng-click="searcharticle()">
+        Search
+      </button>
+    </div>
+  </div>
+
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#">
+        <div class="list">
+
+        <a class="item item-thumbnail-left" href="#/app/playlists/{{playlist.id}}">
+          <img src="png/android-image.png">
+          <h2>{{playlist.title}}</h2>
+          <p>{{playlist.text}}</p>
+          <p>{{playlist.costo}}</p>
+        </a>
+       </div>
+      </ion-item>
+    </ion-list>
+
+
+</ion-view>
