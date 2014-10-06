@@ -61,12 +61,8 @@ angular.module('starter.controllers', [])
 })
 //-----------------------------------------------------------------------------------------------------------------------------------
 //Control encargado de agregar un add a la app
-.controller('AddCtrl', function($scope,$location,$rootScope,$ionicLoading,$timeout) {
+.controller('AddCtrl', function($scope,$location,$rootScope,$ionicLoading) {
               $scope.add = {};
-
-             $scope.promiseCtrl= function ($scope, $timeout) {
-                $scope.result = $timeout(function(){ return "Go!"; }, 90000);
-              }
 
               $scope.addAd = function() {      
                     
@@ -76,54 +72,24 @@ angular.module('starter.controllers', [])
 
                     var direccion;
                     var smallImage = document.getElementById('imagen');
-                    //ar urld = encodeURIComponent($rootScope.imgcamara);
                     var scoree=0;
                     direccion = "http://smartshopping.herokuapp.com/createMyAdds?title="+$scope.add.title+"&text="+$scope.add.description+"&costo="+$scope.add.price+"&email="+$rootScope.email+"&direccion="+$scope.add.location+"&tag_list="+$scope.add.tags+"&score="+scoree;//+"&pic="+$rootScope.imgcamara;//+"&pic="+$scope.add.image;
                     
                     $.ajax({
                         url: direccion,
                     }).then(function(data) {
-                        var name = "photoimage.jpg";
+                        /*var name = "photoimage.jpg";
                         var base64 = "V29ya2luZyBhdCBQYXJzZSBpcyBncmVhdCE=";
                         var photo = $rootScope.imgcamara;
                         alert(photo);
                         var parseFile= new Parse.File(name, { base64: photo });
                         query.set("Image", parseFile);
                         query.set("Id",data.id);
-                        query.save();
+                        query.save();*/
                     });
 
-                    //$scope.show();
-                    //$location.url("/app/playlists");//+id.id);
-
-              //-------------------------------------------------------------------------------------
-                    /*
-                    $scope.promiseCtrl($scope,$timeout);
-
-                    Parse.initialize("KMqDVxUyDJICF5VE1kZ6AEs115e8vanGYHo06nX8", "qNVtqdmtJYXrlImikj8TTh63Qr1pbnKgFou6QU7i");
-                    var pictures = Parse.Object.extend("Pictures");
-                    var query = new pictures();
-
-
-                    //alert("salio");
-                    //alert(JSON.stringify($scope.numeroarticle.id));
-  
-
-                    
-                    var name = "photoimage.jpg";
-                    var base64 = "V29ya2luZyBhdCBQYXJzZSBpcyBncmVhdCE=";
-                    var photo = $rootScope.imgcamara;
-                    alert(photo);
-                    var parseFile= new Parse.File(name, { base64: photo });
-                    query.set("Image", parseFile);
-                    //query.set("Id",$scope.numeroarticle.id);
-                    query.save();
-                    */
-
                     $scope.show();
-                    $location.url("/app/playlists");//+id.id);
-                    //$scope.show();
-                    //$location.url("/app/playlists");//+id.id);
+                    $location.url("/app/playlists");
 
               //-------------------------------------------------------------------------------------     
 
