@@ -1,9 +1,10 @@
-
-Instituto Tecnológico de Costa Rica
+INSTITUTO TENOLOGICO DE COSTA RICA
 
 IC8041 Desarrollo de aplicaciones para dispositivos móviles
 
+
 Proyecto I
+
 
 Estudiantes: 
 
